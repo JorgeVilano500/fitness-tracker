@@ -175,7 +175,7 @@ const DonutChart = React.forwardRef<HTMLDivElement, DonutChartProps>(
       data = [],
       value,
       category,
-      colors = AvailableChartColors,
+      colors = AvailableChartColors, 
       variant = "donut",
       valueFormatter = (value: number) => value.toString(),
       label,
@@ -226,7 +226,7 @@ const DonutChart = React.forwardRef<HTMLDivElement, DonutChartProps>(
     return (
       <div
         ref={forwardedRef}
-        className={cx("h-20 w-20", className)}
+        className={cx("md:h-20 md:w-20 lg:w-40 lg:h-40", className)}
         tremor-id="tremor-raw"
         {...other}
       >

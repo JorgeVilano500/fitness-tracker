@@ -3,6 +3,18 @@
 export type ColorUtility = "bg" | "stroke" | "fill" | "text"
 
 export const chartColors = {
+  gray: { 
+    bg: "bg-gray-500",
+    stroke: "stroke-gray-500",
+    fill: "fill-gray-500",
+    text: "text-gray-500",
+  },
+  fuchsia: {
+    bg: "bg-fuchsia-500",
+    stroke: "stroke-fuchsia-500",
+    fill: "fill-fuchsia-500",
+    text: "text-fuchsia-500",
+  },
   blue: {
     bg: "bg-blue-500",
     stroke: "stroke-blue-500",
@@ -27,12 +39,7 @@ export const chartColors = {
     fill: "fill-amber-500",
     text: "text-amber-500",
   },
-  gray: {
-    bg: "bg-gray-500",
-    stroke: "stroke-gray-500",
-    fill: "fill-gray-500",
-    text: "text-gray-500",
-  },
+ 
   cyan: {
     bg: "bg-cyan-500",
     stroke: "stroke-cyan-500",
@@ -51,12 +58,7 @@ export const chartColors = {
     fill: "fill-lime-500",
     text: "text-lime-500",
   },
-  fuchsia: {
-    bg: "bg-fuchsia-500",
-    stroke: "stroke-fuchsia-500",
-    fill: "fill-fuchsia-500",
-    text: "text-fuchsia-500",
-  },
+  
 } as const satisfies {
   [color: string]: {
     [key in ColorUtility]: string

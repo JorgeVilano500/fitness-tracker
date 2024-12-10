@@ -8,6 +8,12 @@ const config: Config = {
     "./src/lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'lg': {'max': '3040px'},
+      'md': {'max': '1380px'},
+      'sm': {'max': '768px'},
+      'xs' : {'max': '432px'}
+    },
     extend: {
       keyframes: {
         hide: {

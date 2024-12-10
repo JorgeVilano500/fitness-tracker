@@ -19,15 +19,16 @@ const chartdata = [
 
 ]
 
+
 export const DonutChartLabelExample = () => (
   <DonutChart
-    className="mx-auto"
+    className="mx-auto "
     data={chartdata}
     category="name"
     value="amount"
     showLabel={true}
     valueFormatter={(number: number) =>
-      `${Intl.NumberFormat("us").format(number).toString()}`
+      `${Intl.NumberFormat("us").format(number).toString()}%`
     }
   />
 )
@@ -35,23 +36,23 @@ import React from 'react'
 
 const  Overview : React.FC = () => {
   return (
-    <div className="w-[17rem] h-[10rem] flex flex-col">
+    <div className="md:w-[17rem] md:h-[10rem] lg:w-[20rem] lg:h-[13rem] flex flex-col">
         <h3>Overview</h3>
-        <div className="flex flex-row justify-evenly w-[100%] h-[100%] self-center bg-slate-500 p-1">
+        <div className="flex flex-row justify-evenly w-[100%] h-[100%] self-center bg-slate-500 rounded-lg p-1">
             <section className="self-center">
                 {/* section for pie graph */}
                 <DonutChartLabelExample />
             </section>
             <section className="flex flex-col self-center">
-                <div className="text-xs">
+                <div className="md:text-xs">
                     <p>Calores Burned</p>
                     {chartdata[0].amount}
                 </div>
-                <div className="text-xs">
+                <div className="md:text-xs">
                     <p>Steps Walked</p>
                     {chartdata[0].steps}
                 </div>
-                <div className="text-xs">
+                <div className="md:text-xs">
                     <p>Miles Walked</p>
                     {chartdata[0].miles}
                 </div>
