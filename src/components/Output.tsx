@@ -21,14 +21,14 @@ const chartdata = [
 
 function Output() {
   return (
-    <div className='md:w-[17rem] md:h-[10rem] lg:w-[20rem] lg:h-[13rem] flex flex-col'>
+    <div className='self-center md:w-[17rem] md:h-[10rem] lg:w-[20rem] lg:h-[13rem] flex flex-col'>
         <h3>Output</h3>
 
         <section className='bg-zinc-400 flex flex-row justify-evenly w-[100%] h-[100%] self-center rounded-t-lg p-1 '>
-            <div className='w-[80%] h-[50%] my-4 mx-auto bg-orange-200 flex flex-row justify-around gap-4 rounded'>
+            <div className='w-[80%] h-[80%] my-4 mx-auto bg-orange-200 flex flex-row justify-around gap-4 rounded'>
                 <FaWeightScale className=' self-center' size={30} />
                 <section className='self-center'> 
-                    <p className='text-xs'>Weight Loss:</p>
+                    <p className='text-xs'>Current Weight Loss:</p>
                     <p className='font-semibold'>{chartdata[0].amount}</p>
                 </section>
                 <section className='self-end p-1 rounded my-2 flex flex-row bg-gray-500 bg-opacity-50'> 
@@ -40,14 +40,14 @@ function Output() {
         </section>
         <section className='bg-zinc-400 flex flex-row justify-evenly w-[100%] h-[100%] self-center rounded-b-lg p-1 '>
             {/* need to add function to add previous weight loss check in  */}
-        <button className='w-[80%] h-[50%] my-4 mx-auto bg-gray-200 flex flex-row justify-around  border-[1px] border-transparent  rounded transition ease-in-out   hover:border-dotted hover:border-black hover:border-[2px] '>
+        <button className='w-[80%] h-[50%] my-4 mx-auto bg-gray-200 flex flex-row justify-around  border-[2px] border-transparent  rounded transition ease-in-out   hover:border-dotted hover:border-black hover:border-[2px] '>
             <div className='w-[80%] h-[50%] my-4 mx-auto bg-gray-200 flex flex-row justify-around gap-4 border border-transparent  rounded transition ease-in-out      ' >
                 <FaWeightScale className=' self-center' size={30} />
                 <section className='self-center'> 
-                    <p className='text-xs'>Weight Loss:</p>
+                    <p className='text-xs'>New Weight Loss:</p>
                     <p className='font-semibold'>~</p>
                 </section>
-                <section className='self-end p-1 rounded my-2 flex flex-row bg-gray-500 bg-opacity-50'> 
+                <section className='self-center p-1 rounded my-2 flex flex-row bg-gray-500 bg-opacity-50'> 
                    <IoIosAddCircle /> 
                 </section>
             </div>

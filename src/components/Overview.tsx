@@ -36,7 +36,7 @@ import React from 'react'
 
 const  Overview : React.FC = () => {
   return (
-    <div className="md:w-[17rem] md:h-[10rem] lg:w-[20rem] lg:h-[13rem] flex flex-col">
+    <div className="self-center md:w-[17rem] md:h-[10rem] lg:w-[20rem] lg:h-[13rem] flex flex-col">
         <h3>Overview</h3>
         <div className="flex flex-row justify-evenly w-[100%] h-[100%] self-center bg-slate-500 rounded-lg p-1">
             <section className="self-center">

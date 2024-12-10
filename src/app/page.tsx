@@ -1,19 +1,22 @@
 import Image from "next/image";
 import {Activities, Navbar, Output, Overview, SideNav} from "../components/index";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Fitness Tracker',
+  description: 'This is a test of a fitness tracker I have been planning to build for a while. I will use iPHONE Shortcuts to get some automation for data tracking. '
+
+}
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-10 grid-rows-20" >
+    <div className="grid grid-cols-10 grid-rows-auto h-auto" >
       <Navbar />
       <SideNav />
         
-        <section className="flex flex-row gap-5 w-[100%] col-span-8">
-          <Activities />
 
-          <Overview />
-
-          <Output/>
-        </section>
+        <h1>Welcome to the main page</h1>
+    
     </div> 
   );
 }
