@@ -1,7 +1,11 @@
 import Image from "next/image";
 import {Activities, Navbar, Output, Overview, SideNav} from "../../components/index";
+import { supabase } from "@/lib/supabaseClient";
 
 export default function Home() {
+
+  
+
   return (
     <div className="grid grid-cols-10 grid-rows-auto h-auto" >
       <Navbar />
