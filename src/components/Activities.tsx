@@ -42,7 +42,7 @@ const weekdayProgess = [
 function Activities() {
   return (
     <div className="self-center md:w-[17rem] md:h-[10rem] lg:w-[20rem] lg:h-[13rem] col-span-4 flex flex-col">
-      <h3>Activities</h3>
+      <h3 className='text-xl font-semibold'>Activities</h3>
       <div  className="flex flex-row justify-evenly w-[100%] h-[100%] self-center bg-slate-500 rounded-lg p-1">
           {weekdayProgess.map(({day, progress, color}) => (
             <ProgressBar key={day} day={day}  progress={progress} color={color}/>

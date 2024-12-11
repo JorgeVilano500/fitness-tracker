@@ -8,7 +8,7 @@ const ProgressBar : React.FC<DailyProgressBar> = ({day, progress, color}) => {
         <div className='text-sm font-medium'>{day.slice(0,1)}</div>
         <div className='h-40 w-6 bg-gray-200 rounded-lg overflow-hidden relative'>
             <div
-             className={`absolute bottom-0 w-full bg-[${color}] z-20`}
+             className={`absolute bottom-0 w-full bg-[${color}] `}
                 style={{height: `${progress}%`, backgroundColor: color}}
             >
             </div>

@@ -1,9 +1,12 @@
 'use server'
 import { revalidatePath } from 'next/cache';
-import {supabase} from '../../lib/supabaseClient';
+// import {supabase} from '../../utils/supabaseClient';
+import { createClient } from '@/utils/supabase/server';
 import {redirect} from 'next/navigation';
 
 export const signup = async (formData: FormData) => {
+    const supabase = await createClient();
+
     const { data, error } = await supabase.auth.signUp({
       email: formData.get('email') as string,
       password: formData.get('password') as string,
@@ -14,13 +17,16 @@ export const signup = async (formData: FormData) => {
         redirect('/error')
     }
     else {
+        const {error} = await supabase.from('user_table').insert({email: data.user?.email, user_policy_id: data.user?.id})
         console.log('User signed up:', data)
         revalidatePath('/', 'layout');
-        redirect('/')
+        redirect('/tracker-page')
     };
   };
   
   export const logout = async () => {
+    const supabase = await createClient();
+
     const {error} = await supabase.auth.signOut();
 
     if(error) console.log('signout error:', error.message)
@@ -31,6 +37,8 @@ export const signup = async (formData: FormData) => {
   }
 
   export const login = async (formData: FormData) => {
+    const supabase = await createClient();
+
     const { data, error } = await supabase.auth.signInWithPassword({
       email: formData.get('email') as string,
       password: formData.get('password') as string,
@@ -49,6 +57,8 @@ export const signup = async (formData: FormData) => {
   
 
   export const getSession = async () => {
+    const supabase = await createClient();
+
     const { data, error } = await supabase.auth.getSession();
     if (error) console.error('Session error:', error);
     else console.log('Session Data:', data);

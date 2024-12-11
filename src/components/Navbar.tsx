@@ -7,12 +7,16 @@ import { FaHouseUser } from "react-icons/fa";
 import Link from 'next/link';
 import { useMyContext } from '@/app/context/MyContext';
 import { logout } from '@/app/login/actions';
+import type { User } from '@supabase/supabase-js';
+
+type NavbarProps = {
+    user: User | null;
+}
 
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<NavbarProps> = ({user}) => {
     const [timeValue, setTimeValue] = useState('')
 
-    const {user} = useMyContext();
 
     const isUserLoggedIn = false;
 
@@ -45,7 +49,7 @@ const Navbar: React.FC = () => {
     }, [])
 
   return (
-        <section className='w-[auto] h-[auto] py-2 bg-slate-400 col-span-10 flex flex-row justify-between '>
+        <section className='w-[100%] h-[auto] py-2 bg-slate-400 col-span-10 flex flex-row justify-between '>
             <div className='flex flex-row'>
 
           <FaDumbbell size={'3rem'} className='self-center mx-4 ' />
@@ -61,7 +65,7 @@ const Navbar: React.FC = () => {
                 <>
                     <Link href={'/tracker-page'}><section className='flex flex-row gap-2 p-2 rounded transition ease-in-out hover:bg-slate-500 hover:text-slate-200 ' >
                     <IoPersonCircleSharp size={'1.5rem'} className='self-center' />
-                    <p className='self-center'>Username1</p>
+                    <p className='self-center'>{user?.email}</p>
                 </section></Link>
                 <button onClick={logout} className='bg-slate-500 py-1 px-2 rounded border border-transparent transition ease-in-out hover:text-slate-500 hover:border-slate-500 hover:border-[1px] hover:bg-slate-200'>Logout</button>
                 
