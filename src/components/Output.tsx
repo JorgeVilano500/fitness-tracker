@@ -1,26 +1,12 @@
-'use client'
-import React, { useEffect } from 'react'
-import { FaWeightScale } from "react-icons/fa6";
-import { PiFireSimpleDuotone } from "react-icons/pi";
-import { IoIosAddCircle } from "react-icons/io";
+'use client';
+import React, { useEffect } from 'react';
+import { FaWeightScale } from 'react-icons/fa6';
+import { PiFireSimpleDuotone } from 'react-icons/pi';
+import { IoIosAddCircle } from 'react-icons/io';
 import { useMyContext } from '@/app/context/MyContext';
 import Modal from './Modal';
 
-const chartdata = [
-    {
-      name: "Calories Burned",
-      amount: 84,
-      steps: 8912, 
-      miles: 0.5
-    },
-    {
-      name: "Amount Left",
-      amount: 16,
-      steps: 8193, 
-      miles: 0/8
-    },
-  
-  ]
+
   
   const WeightLossForm = () => {
     const {addWeightLossData} = useMyContext();
@@ -33,9 +19,9 @@ const chartdata = [
         <br />
         <input type='submit' placeholder='Submit' className='bg-slate-500 py-1 px-2 rounded border border-transparent transition ease-in-out hover:text-slate-500 hover:border-slate-500 hover:border-[1px] hover:bg-slate-200' />
       </form>
-    )
+    );
 
-  }
+  };
 
 function Output() {
 
@@ -43,7 +29,7 @@ function Output() {
 
   useEffect(() => {
     fetchWeightLossData();
-  }, [])
+  }, []);
 
 
 
@@ -113,7 +99,7 @@ function Output() {
       </Modal>
 
     </div>
-  )
-}
+  );
+};
 
-export default Output
+export default Output;

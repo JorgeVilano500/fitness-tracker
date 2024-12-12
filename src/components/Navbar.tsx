@@ -1,24 +1,22 @@
-"use client"
+'use client';
 
-import React, { useEffect, useState } from 'react'
-import { FaDumbbell, FaRegBell } from "react-icons/fa6";
-import { IoPersonCircleSharp } from "react-icons/io5";
-import { FaHouseUser } from "react-icons/fa";
+import React, { useEffect, useState } from 'react';
+import { FaDumbbell, FaRegBell } from 'react-icons/fa6';
+import { IoPersonCircleSharp } from 'react-icons/io5';
 import Link from 'next/link';
-import { useMyContext } from '@/app/context/MyContext';
-import { logout } from '@/app/login/actions';
 import type { User } from '@supabase/supabase-js';
 
 type NavbarProps = {
     user: User | null;
-}
+    logout: () => void
+};
 
 
-const Navbar: React.FC<NavbarProps> = ({user}) => {
-    const [timeValue, setTimeValue] = useState('')
+const Navbar: React.FC<NavbarProps> = ({user, logout}) => {
+    const [timeValue, setTimeValue] = useState('');
 
 
-    const isUserLoggedIn = false;
+    // const isUserLoggedIn = false;
 
     const formatDate = () => {
         const now = new Date();
@@ -27,26 +25,26 @@ const Navbar: React.FC<NavbarProps> = ({user}) => {
         minute: '2-digit', 
         second: '2-digit' 
         });
-        console.log(formatter.format(now).slice(-2)); // Example: "12:30:45"
+        console.log(formatter.format(now).slice(-2)); // Example: '12:30:45'
 
-        let hoursDigit = formatter.format(now).slice(-2);
+        const hoursDigit = formatter.format(now).slice(-2);
         switch(hoursDigit) {
             case  'AM': 
-                setTimeValue( 'Goodmorning')
+                setTimeValue( 'Goodmorning');
                 break;
             case 'PM': 
-                setTimeValue( 'Goodevening')
+                setTimeValue( 'Goodevening');
                 break;
             default: 
-                setTimeValue( 'Not sure what time it is')
+                setTimeValue( 'Not sure what time it is');
                 break;
-        }
+        };
 
-    }
+    };
 
     useEffect(() => {
-        formatDate()
-    }, [])
+        formatDate();
+    }, []);
 
   return (
         <section className='w-[100%] h-[auto] py-2 bg-slate-400 col-span-10 flex flex-row justify-between '>
@@ -76,7 +74,7 @@ const Navbar: React.FC<NavbarProps> = ({user}) => {
 
         </section>
         
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -1,5 +1,5 @@
-import React from 'react'
-import ProgressBar from './ProgressBar'
+import React from 'react';
+import ProgressBar from './ProgressBar';
 
 const weekdayProgess = [
   {
@@ -37,7 +37,7 @@ const weekdayProgess = [
     progress: 0, 
     color: '#590202'
   }
-]
+];
 
 function Activities() {
   return (
@@ -49,7 +49,7 @@ function Activities() {
           ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Activities
+export default Activities;

@@ -1,5 +1,5 @@
-import React from 'react'
-import type { DailyProgressBar } from '@/types/common'
+import React from 'react';
+import type { DailyProgressBar } from '@/types/common';
 
 
 const ProgressBar : React.FC<DailyProgressBar> = ({day, progress, color}) => {
@@ -16,7 +16,7 @@ const ProgressBar : React.FC<DailyProgressBar> = ({day, progress, color}) => {
         </div>
 
     </div>
-  )
-}
+  );
+};
 
-export default ProgressBar
+export default ProgressBar;
