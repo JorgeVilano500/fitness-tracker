@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FaWeightScale } from 'react-icons/fa6';
 import { PiFireSimpleDuotone } from 'react-icons/pi';
 import { IoIosAddCircle } from 'react-icons/io';
@@ -25,11 +25,8 @@ import Modal from './Modal';
 
 function Output() {
 
-  const {fetchWeightLossData, isLastWeight, isModalOpen, handleOpenModal, handleCloseModal, modalContent} = useMyContext();
+  const { isLastWeight, isModalOpen, handleOpenModal, handleCloseModal, modalContent} = useMyContext();
 
-  useEffect(() => {
-    fetchWeightLossData();
-  }, []);
 
 
 

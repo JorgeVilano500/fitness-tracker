@@ -12,11 +12,11 @@ export default async function Home() {
   if(error || !data?.user) {
     redirect('/login');
   }
-
   const {data: trackerData, error: trackerError} = await supabase.from('daily_tracker').select().eq('user_policy_id', data?.user.id);
   
   if(trackerError) console.log('tracking error on db', trackerError.message);
   console.log(trackerData);
+
 
   return (
     <div className='grid col-span-10 row-span-auto grid-rows-auto h-screen' >

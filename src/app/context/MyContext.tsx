@@ -276,6 +276,7 @@ export const MyProvider = ({children}: {children: ReactNode}) => {
             console.log(subscription);
         });
         formatDateLogger();
+        fetchWeightLossData();
 
 
 

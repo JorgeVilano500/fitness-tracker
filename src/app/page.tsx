@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const supabase = await createClient();
-  const pexel = await pexelClient(process.env.NEXT_PEXELS_API_KEY || '');
+  const pexel =  pexelClient(process.env.NEXT_PEXELS_API_KEY || '');
 
 
 
