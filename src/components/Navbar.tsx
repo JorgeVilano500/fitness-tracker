@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
 import { FaDumbbell, FaRegBell } from 'react-icons/fa6';
 import { IoPersonCircleSharp } from 'react-icons/io5';
 import Link from 'next/link';
 import type { User } from '@supabase/supabase-js';
+import { useMyContext } from '@/app/context/MyContext';
 
 type NavbarProps = {
     user: User | null;
@@ -13,38 +13,8 @@ type NavbarProps = {
 
 
 const Navbar: React.FC<NavbarProps> = ({user, logout}) => {
-    const [timeValue, setTimeValue] = useState('');
+    const {timeValue} = useMyContext();
 
-
-    // const isUserLoggedIn = false;
-
-    const formatDate = () => {
-        const now = new Date();
-        const formatter = new Intl.DateTimeFormat('en-US', { 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        second: '2-digit' 
-        });
-        console.log(formatter.format(now).slice(-2)); // Example: '12:30:45'
-
-        const hoursDigit = formatter.format(now).slice(-2);
-        switch(hoursDigit) {
-            case  'AM': 
-                setTimeValue( 'Goodmorning');
-                break;
-            case 'PM': 
-                setTimeValue( 'Goodevening');
-                break;
-            default: 
-                setTimeValue( 'Not sure what time it is');
-                break;
-        };
-
-    };
-
-    useEffect(() => {
-        formatDate();
-    }, []);
 
   return (
         <section className='w-[100%] h-[auto]  py-2 bg-slate-400 col-span-10 bg-blend-darken flex flex-row lg:justify-between md:justify-between  '>

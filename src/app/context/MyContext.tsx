@@ -22,6 +22,9 @@ export type TrackingData = {
 }
 
 interface MyContextType  {
+    timeValue: string |undefined
+    formatDateLogger: () => void
+
     userData: object | null
     setUserData: (user: User | null) => void
     fetchWeightLossData: () => void
@@ -228,6 +231,35 @@ export const MyProvider = ({children}: {children: ReactNode}) => {
             setNum('-1');
         } 
     };
+
+    const [timeValue, setTimeValue] = useState('');
+
+
+    // const isUserLoggedIn = false;
+
+    const formatDateLogger = () => {
+        const now = new Date();
+        const formatter = new Intl.DateTimeFormat('en-US', { 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit' 
+        });
+        console.log(formatter.format(now).slice(-2)); // Example: '12:30:45'
+
+        const hoursDigit = formatter.format(now).slice(-2);
+        switch(hoursDigit) {
+            case  'AM': 
+                setTimeValue( 'Goodmorning');
+                break;
+            case 'PM': 
+                setTimeValue( 'Goodevening');
+                break;
+            default: 
+                setTimeValue( 'Not sure what time it is');
+                break;
+        };
+
+    };
     
 
     useEffect(() => {
@@ -243,13 +275,15 @@ export const MyProvider = ({children}: {children: ReactNode}) => {
             setUserData(session?.user ?? null);
             console.log(subscription);
         });
+        formatDateLogger();
+
 
 
         // return () => subscription?.unsubscribe();
     }, []);
 
     return (
-        <MyContext.Provider value={{userData, setUserData, fetchWeightLossData, isLastWeight, setIsLastWeight, isModalOpen, setIsModalOpen, modalContent, setModalContent, handleOpenModal, handleCloseModal, addWeightLossData, formatDate, deleteWeightLossData, updateWeightLossData, num, setNum, fetchDailyTrackingData, addDailyTrackingData, deleteDailyTrackingData, updateDailyTrackingData}} >
+        <MyContext.Provider value={{userData, setUserData, fetchWeightLossData, isLastWeight, setIsLastWeight, isModalOpen, setIsModalOpen, modalContent, setModalContent, handleOpenModal, handleCloseModal, addWeightLossData, formatDate, deleteWeightLossData, updateWeightLossData, num, setNum, fetchDailyTrackingData, addDailyTrackingData, deleteDailyTrackingData, updateDailyTrackingData, timeValue, formatDateLogger}} >
             {children}
         </MyContext.Provider>
     );
