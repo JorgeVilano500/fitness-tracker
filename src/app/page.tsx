@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const supabase = await createClient();
-  const pexel = await pexelClient(process.env.NEXT_PEXELS_API_KEY || '')
+  const pexel = await pexelClient(process.env.NEXT_PEXELS_API_KEY || '');
 
 
 
@@ -33,9 +33,9 @@ export default async function Home() {
           {
             pexel.photos.show({id: 791763}).then((photo) => {
               if ('url' in photo) {
-                return <div style={{backgroundImage: `url(${photo.src.original})`}} className='absolute top-0 left-0 w-full h-full bg-cover object-cover xs:bg-top sm:bg-top lg:bg-center filter brightness-50 blur-sm'> </div>
+                return <div style={{backgroundImage: `url(${photo.src.original})`}} className='absolute top-0 left-0 w-full h-full bg-cover object-cover xs:bg-top sm:bg-top lg:bg-center filter brightness-50 blur-sm'> </div>;
               } else {
-                console.log('Photo error', photo.error)
+                console.log('Photo error', photo.error);
               }
             })
           }

@@ -209,7 +209,7 @@ export const MyProvider = ({children}: {children: ReactNode}) => {
     
     const updateWeightLossData = async (e: React.KeyboardEvent<HTMLInputElement>, item: WeightLossData, newVal: string) => {
         if(!newVal) {
-            return alert('please update weight')
+            return alert('please update weight');
         }
 
         if(e.key === 'Enter') {
@@ -246,7 +246,7 @@ export const MyProvider = ({children}: {children: ReactNode}) => {
 
 
         // return () => subscription?.unsubscribe();
-    }, []);
+    }, [supabase.auth.getUser()]);
 
     return (
         <MyContext.Provider value={{userData, setUserData, fetchWeightLossData, isLastWeight, setIsLastWeight, isModalOpen, setIsModalOpen, modalContent, setModalContent, handleOpenModal, handleCloseModal, addWeightLossData, formatDate, deleteWeightLossData, updateWeightLossData, num, setNum, fetchDailyTrackingData, addDailyTrackingData, deleteDailyTrackingData, updateDailyTrackingData}} >
