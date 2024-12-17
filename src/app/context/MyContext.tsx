@@ -208,6 +208,10 @@ export const MyProvider = ({children}: {children: ReactNode}) => {
     };
     
     const updateWeightLossData = async (e: React.KeyboardEvent<HTMLInputElement>, item: WeightLossData, newVal: string) => {
+        if(!newVal) {
+            return alert('please update weight')
+        }
+
         if(e.key === 'Enter') {
                // will change the value using supabase in a second 
 

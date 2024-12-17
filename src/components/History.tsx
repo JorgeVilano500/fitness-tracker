@@ -45,16 +45,16 @@ function History() {
 
 
   return (
-    <div className='w-[50%] h-[20rem] m-auto'>
+    <div className='w-[100%] h-[auto] m-auto'>
         <h1 className='text-xl font-semibold'>History</h1>
         <section className='bg-slate-500 '>
-            <ul className='w-[75%] h-[10rem] m-auto overflow-y-auto overflow-x-hidden'>
+            <ul className='sm:w-[100%] lg:w-[75%] h-[10rem] m-auto overflow-y-auto overflow-x-hidden'>
             {(isLastWeight ?? []).map((item, inx) => (
                 <li key={inx} className='w-[auto] h-[4rem] flex flex-row justify-center gap-5 bg-slate-200 m-4 rounded'>
                     {
                         Number(num) === inx ? (
                             <>
-                                <h1 className='text-xl font-thin self-center'>Edit Weight Lost:</h1>
+                                <h1 className='text-sm font-thin self-center'>Edit Weight Lost:</h1>
                                 <input
                                     type='text'
                                     // value={}
@@ -63,6 +63,7 @@ function History() {
                                     onKeyDown={(e) =>updateWeightLossData(e, item, e.currentTarget.value)}
                                     autoFocus
                                     className='w-[25%] h-[50%] my-auto'
+                                    required
                                 
                                 />
                                 <p className='text-xs self-center'>Press Enter</p>

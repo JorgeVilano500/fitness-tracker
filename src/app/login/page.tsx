@@ -28,9 +28,9 @@ export default async function LoginPage() {
     <div className='grid grid-cols-10 grid-rows-auto h-auto'>
         <Navbar logout={logout} user={data.user} />
         <SideNav />
-        <div className='col-span-8 w-[25%] h-[50%] border-slate-200 justify-center gap-4 p-4 border-[1px]  m-auto'>
+        <div className=' col-span-9 lg:w-[25%] lg:h-[50%] md:w-[40%] md:h-[75%] sm:w-[90%] sm:h-[50%]  border-slate-200  gap-4 sm:p-0 lg:p-4 border-[1px] sm:mx-auto  lg:m-auto'>
 
-    <form  className='flex flex-col w-[80%] border-slate-200 justify-center gap-4 p-4   m-auto'>
+    <form  className='flex flex-col sm:w-[80%] lg:w-[80%] border-slate-200 justify-center gap-4 p-4   mx-auto'>
       <label htmlFor='email'>Email:</label>
       <input id='email' name='email' type='email'  />
       <label htmlFor='password'>Password:</label>

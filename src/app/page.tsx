@@ -2,6 +2,8 @@ import { Navbar, SideNav} from '../components/index';
 import { Metadata } from 'next';
 import { logout } from './login/actions';
 import { createClient } from '@/utils/supabase/server';
+import { createClient as pexelClient } from 'pexels';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Fitness Tracker',
@@ -12,6 +14,9 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const supabase = await createClient();
+  const pexel = await pexelClient(process.env.NEXT_PEXELS_API_KEY || '')
+
+
 
   const {data, error} = await supabase.auth.getUser();
 
@@ -20,14 +25,25 @@ export default async function Home() {
 
 
   return (
-    <div className='grid grid-cols-10 grid-rows-auto h-auto' >
+    <div className='relative h-screen grid grid-cols-10 grid-rows-auto ' >
       <Navbar logout={logout} user={data.user} />
       <SideNav />
         
-        <div className='my-4 col-span-8'>
-          <h1>Welcome to the main page</h1>
-          <h3>Please login</h3>
-      
+        <div className='relative col-span-9'>
+          {
+            pexel.photos.show({id: 791763}).then((photo) => {
+              if ('url' in photo) {
+                return <div style={{backgroundImage: `url(${photo.src.original})`}} className='absolute top-0 left-0 w-full h-full bg-cover object-cover xs:bg-top sm:bg-top lg:bg-center filter brightness-50 blur-sm'> </div>
+              } else {
+                console.log('Photo error', photo.error)
+              }
+            })
+          }
+              <div className="relative h-[100%] z-10 text-center text-white p-8  bg-opacity-50 max-w-2xl m-auto mb-16 rounded-lg flex flex-col justify-center">
+          <h1 className="text-4xl font-bold mb-4">Welcome to My Website</h1>
+          <p className="text-lg">Please Login first before moving on</p>
+          <Link href={'/login'}><button className='bg-slate-500 py-1 px-2 rounded border border-transparent transition ease-in-out hover:text-slate-500 hover:border-slate-500 hover:border-[1px] hover:bg-slate-200'>Log in</button></Link>
+    </div>
         </div>
     
     </div> 
