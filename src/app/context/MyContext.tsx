@@ -246,7 +246,7 @@ export const MyProvider = ({children}: {children: ReactNode}) => {
 
 
         // return () => subscription?.unsubscribe();
-    }, [supabase.auth.getUser()]);
+    }, []);
 
     return (
         <MyContext.Provider value={{userData, setUserData, fetchWeightLossData, isLastWeight, setIsLastWeight, isModalOpen, setIsModalOpen, modalContent, setModalContent, handleOpenModal, handleCloseModal, addWeightLossData, formatDate, deleteWeightLossData, updateWeightLossData, num, setNum, fetchDailyTrackingData, addDailyTrackingData, deleteDailyTrackingData, updateDailyTrackingData}} >
