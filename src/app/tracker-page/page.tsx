@@ -14,8 +14,11 @@ export default async function Home() {
   }
   const {data: trackerData, error: trackerError} = await supabase.from('daily_tracker').select().eq('user_policy_id', data?.user.id);
   
-  if(trackerError) console.log('tracking error on db', trackerError.message);
-  console.log(trackerData);
+  if(trackerError) {
+    console.log('tracking error on db', trackerError.message)
+
+    console.log(trackerData);
+  };
 
 
   return (
