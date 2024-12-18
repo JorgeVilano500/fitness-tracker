@@ -18,6 +18,7 @@ export default async function Home() {
     console.log('tracking error on db', trackerError.message)
 
     console.log(trackerData);
+    
   };
 
 
