@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 import { FaHouseUser } from 'react-icons/fa6';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { IoSettingsSharp } from 'react-icons/io5';
