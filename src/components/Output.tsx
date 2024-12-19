@@ -3,7 +3,7 @@ import React from 'react';
 import { FaWeightScale } from 'react-icons/fa6';
 import { PiFireSimpleDuotone } from 'react-icons/pi';
 import { IoIosAddCircle } from 'react-icons/io';
-import { useMyContext } from '@/app/context/MyContext';
+import { useMyContext } from '@/context/MyContext';
 import Modal from './Modal';
 
 

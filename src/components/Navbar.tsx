@@ -4,7 +4,7 @@ import { FaDumbbell, FaRegBell } from 'react-icons/fa6';
 import { IoPersonCircleSharp } from 'react-icons/io5';
 import Link from 'next/link';
 import type { User } from '@supabase/supabase-js';
-import { useMyContext } from '@/app/context/MyContext';
+import { useMyContext } from '@/context/MyContext';
 
 type NavbarProps = {
     user: User | null;

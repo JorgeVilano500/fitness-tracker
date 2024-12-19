@@ -3,8 +3,8 @@ import { DonutChart } from './DonutChart';
 import React from 'react';
 import Modal from './Modal';
 import { IoIosAdd } from 'react-icons/io';
-import { useMyContext } from '@/app/context/MyContext';
-import type { TrackingData } from '@/app/context/MyContext';
+import { useMyContext } from '@/context/MyContext';
+import type { TrackingData } from '@/context/MyContext';
 type ChartDataItem = {
   name: string; // The name of the chart segment
   amount: number; // The numerical value for the amount
