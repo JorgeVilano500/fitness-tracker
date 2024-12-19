@@ -30,7 +30,7 @@ export default async function Home() {
       <SideNav />
         
         <div className='relative col-span-9'>
-          {
+          {/* {
             pexel.photos.show({id: 791763}).then((photo) => {
               if ('url' in photo) {
                 return <div style={{backgroundImage: `url(${photo.src.original})`}} className='absolute top-0 left-0 w-full h-full bg-cover object-cover xs:bg-top sm:bg-top lg:bg-center filter brightness-50 blur-sm'> </div>;
@@ -38,7 +38,7 @@ export default async function Home() {
                 console.log('Photo error', photo.error);
               }
             })
-          }
+          } */}
               <div className="relative h-[100%] z-10 text-center text-white p-8  bg-opacity-50 max-w-2xl m-auto mb-16 rounded-lg flex flex-col justify-center">
           <h1 className="text-4xl font-bold mb-4">Welcome to My Website</h1>
           <p className="text-lg">Please Login first before moving on</p>
