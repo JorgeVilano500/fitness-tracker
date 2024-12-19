@@ -6,6 +6,11 @@
   from = "/*"
   to = "/index.html"
   status = 200
+  from = '/_next/image/*'
+  query = { q = ':quality', url = ':url', w = ':width' }
+  to = '/.netlify/images?url=:url&w=:width&q=:quality'
+  force = true
+
 
 
   [[plugins]]
