@@ -2,7 +2,7 @@ import { Navbar, SideNav} from '../components/index';
 import { Metadata } from 'next';
 import { logout } from './login/actions';
 import { createClient } from '@/utils/supabase/server';
-import { createClient as pexelClient } from 'pexels';
+// import { createClient as pexelClient } from 'pexels';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const supabase = await createClient();
-  const pexel =  pexelClient(process.env.NEXT_PEXELS_API_KEY || '');
+  // const pexel =  pexelClient(process.env.NEXT_PEXELS_API_KEY || '');
 
 
 
