@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useMyContext } from '@/context/MyContext';
+import { useMyContext } from '../context/MyContext';
 import { TiDelete } from 'react-icons/ti';
 // import type { WeightLossData } from '@/app/context/MyContext';
 // import { createClient } from '@/utils/supabase/client';
