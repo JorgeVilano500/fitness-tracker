@@ -37,3 +37,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 inspiration: 
 https://www.pinterest.com/pin/590604938663411394/
+https://www.pinterest.com/search/pins/?q=fitness%20website%20design&rs=typed
